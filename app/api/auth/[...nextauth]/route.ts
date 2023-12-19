@@ -30,6 +30,7 @@ const handler = NextAuth({
         return false;
       }
     },
+    //@ts-ignore
     async session({ session }) {
       if (!session) return;
       const dbUser = await User.findOne({
