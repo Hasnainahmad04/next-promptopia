@@ -8,8 +8,16 @@ const handler = NextAuth({
     Google({
       clientId: process.env.GOOGLE_ID,
       clientSecret: process.env.CLEINT_SECRET,
+      authorization: {
+        params: {
+          prompt: "consent",
+          access_type: "offline",
+          response_type: "code",
+        },
+      },
     }),
   ],
+  secret: process.env.NEXTAUTH_SECRET,
   callbacks: {
     async signIn({ profile }) {
       try {
