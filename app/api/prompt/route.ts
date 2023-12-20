@@ -2,6 +2,8 @@ import Prompt from "@models/prompt";
 import { ConnectToDatabase } from "@utils/database";
 import { NextResponse } from "next/server";
 
+export const dynamic = "force-dynamic";
+
 export const GET = async () => {
   try {
     await ConnectToDatabase();
