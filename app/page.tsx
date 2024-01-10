@@ -3,7 +3,14 @@ import { Metadata } from "next";
 import React from "react";
 
 export const metadata: Metadata = {
-  keywords: ["Next.js", "React", "JavaScript", "crud by Hasnain"],
+  keywords: [
+    "Next.js",
+    "React",
+    "JavaScript",
+    "crud by nain",
+    "Nain",
+    "vercel",
+  ],
   openGraph: {
     type: "website",
     images: [
