@@ -3,14 +3,15 @@ import { Metadata } from "next";
 import React from "react";
 
 export const metadata: Metadata = {
+  keywords: ["Next.js", "React", "JavaScript", "crud by Hasnain"],
   openGraph: {
     type: "website",
     images: [
       {
-        url: "https://unsplash.com/photos/woman-with-dslr-camera-e616t35Vbeg",
+        url: "https://opengraph.b-cdn.net/production/documents/7931f7df-59b4-4b8e-952e-9caa9e308ada.jpg?token=4r4vrR2yOogu3i8ZOTF8XzL1Z0MwDEGzJ8s7sdp3oHQ&height=800&width=1200&expires=33240886192",
         alt: "Demo Image",
-        width: 800,
-        height: 600,
+        width: 1200,
+        height: 800,
       },
     ],
     title: "Promptopia",
@@ -22,10 +23,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     images: [
       {
-        url: "https://unsplash.com/photos/woman-with-dslr-camera-e616t35Vbeg",
+        url: "https://opengraph.b-cdn.net/production/documents/7931f7df-59b4-4b8e-952e-9caa9e308ada.jpg?token=4r4vrR2yOogu3i8ZOTF8XzL1Z0MwDEGzJ8s7sdp3oHQ&height=800&width=1200&expires=33240886192",
         alt: "Demo Image",
-        width: 800,
-        height: 600,
+        width: 1200,
+        height: 800,
       },
     ],
     site: "https://next-crud-hasnainahmad04.vercel.app/",
