@@ -6,6 +6,12 @@ export const metadata: Metadata = {
   title: "Promptopia By Hasnain",
   description: "A simple clone of Promptopia in Next js",
   robots: { follow: true, index: true, "max-image-preview": "standard" },
+  authors: [
+    {
+      name: "Hasnain Ahmad",
+      url: "https://www.linkedin.com/in/hasnain-ahmadkhan",
+    },
+  ],
   keywords: [
     "Next.js",
     "React",
