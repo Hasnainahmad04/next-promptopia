@@ -3,14 +3,14 @@ import { Metadata } from "next";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: "Crud By Hasnain",
+  title: "Promptopia By Hasnain",
+  description: "A simple clone of Promptopia in Next js",
   keywords: [
     "Next.js",
     "React",
     "JavaScript",
-    "crud by nain",
-    "Nain",
-    "vercel",
+    "Promptopia By Hasnain",
+    "Promptopia",
   ],
   openGraph: {
     type: "website",
