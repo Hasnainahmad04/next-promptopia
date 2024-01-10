@@ -5,7 +5,14 @@ import React from "react";
 export const metadata: Metadata = {
   openGraph: {
     type: "website",
-    images: ["https://unsplash.com/photos/woman-with-dslr-camera-e616t35Vbeg"],
+    images: [
+      {
+        url: "https://unsplash.com/photos/woman-with-dslr-camera-e616t35Vbeg",
+        alt: "Demo Image",
+        width: 800,
+        height: 600,
+      },
+    ],
     title: "Promptopia",
     description: "Discover & Prompt AI Prompts",
     url: "https://next-crud-hasnainahmad04.vercel.app/",
@@ -13,7 +20,14 @@ export const metadata: Metadata = {
   twitter: {
     title: "Promptopia",
     card: "summary_large_image",
-    images: ["https://unsplash.com/photos/woman-with-dslr-camera-e616t35Vbeg"],
+    images: [
+      {
+        url: "https://unsplash.com/photos/woman-with-dslr-camera-e616t35Vbeg",
+        alt: "Demo Image",
+        width: 800,
+        height: 600,
+      },
+    ],
     site: "https://next-crud-hasnainahmad04.vercel.app/",
     description: "Discover & Prompt AI Prompts",
   },
