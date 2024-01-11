@@ -4,14 +4,14 @@ import React, { useEffect, useState } from "react";
 import PromptCard from "./PromptCard";
 
 interface PromptCardListProps {
-  data: Prompt[];
+  data: Prompt[] | undefined;
   handleTagClick: (tag: string) => void;
 }
 
-const PromptCardList = ({ data, handleTagClick }: PromptCardListProps) => {
+const PromptCardList = ({ data = [], handleTagClick }: PromptCardListProps) => {
   return (
     <div className="mt-16 prompt_layout">
-      {data.map((prompt) => (
+      {data?.map((prompt) => (
         <PromptCard
           key={prompt._id}
           prompt={prompt}
@@ -28,9 +28,11 @@ const Feed = () => {
   const [searchResult, setSearchResult] = useState<Prompt[]>([]);
 
   const fetchPosts = async () => {
-    const res = await fetch("/api/prompt", { cache: "no-store" });
-    const data: Prompt[] = await res.json();
-    setPromptList(data);
+    try {
+      const res = await fetch("/api/prompt", { cache: "no-store" });
+      const data: Prompt[] = await res.json();
+      setPromptList(data);
+    } catch (error) {}
   };
 
   useEffect(() => {

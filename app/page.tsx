@@ -5,6 +5,7 @@ import React from "react";
 export const metadata: Metadata = {
   title: "Promptopia By Hasnain",
   description: "A simple clone of Promptopia in Next js",
+  robots: "index, follow",
   applicationName: "Promptopia clone",
   creator: "Hasnain Ahmad",
   publisher: "Hasnain Ahmad",
