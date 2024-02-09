@@ -2,49 +2,6 @@ import Feed from "@components/Feed";
 import { Metadata } from "next";
 import React from "react";
 
-export const metadata: Metadata = {
-  title: "Promptopia By Hasnain",
-  description: "A simple clone of Promptopia in Next js",
-  robots: "index, follow",
-  applicationName: "Promptopia clone",
-  creator: "Hasnain Ahmad",
-  publisher: "Hasnain Ahmad",
-  keywords: [
-    "Next.js",
-    "React",
-    "JavaScript",
-    "Promptopia By Hasnain",
-    "Promptopia",
-  ],
-  openGraph: {
-    type: "website",
-    images: [
-      {
-        url: "https://opengraph.b-cdn.net/production/documents/7931f7df-59b4-4b8e-952e-9caa9e308ada.jpg?token=4r4vrR2yOogu3i8ZOTF8XzL1Z0MwDEGzJ8s7sdp3oHQ&height=800&width=1200&expires=33240886192",
-        alt: "Demo Image",
-        width: 1200,
-        height: 800,
-      },
-    ],
-    title: "Promptopia",
-    description: "Discover & Prompt AI Prompts",
-    url: "https://next-crud-hasnainahmad04.vercel.app/",
-  },
-  twitter: {
-    title: "Promptopia",
-    card: "summary_large_image",
-    images: [
-      {
-        url: "https://opengraph.b-cdn.net/production/documents/7931f7df-59b4-4b8e-952e-9caa9e308ada.jpg?token=4r4vrR2yOogu3i8ZOTF8XzL1Z0MwDEGzJ8s7sdp3oHQ&height=800&width=1200&expires=33240886192",
-        alt: "Demo Image",
-        width: 1200,
-        height: 800,
-      },
-    ],
-    site: "https://next-crud-hasnainahmad04.vercel.app/",
-    description: "Discover & Prompt AI Prompts",
-  },
-};
 
 const App = () => {
   return (

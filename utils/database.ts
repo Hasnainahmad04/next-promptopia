@@ -12,9 +12,9 @@ export const ConnectToDatabase = async () => {
         dbName: "share_prompt",
       });
       isConnected = true;
-      console.log("Monogdb Connected");
+      console.log("Mongo Db Connected");
     } catch (error) {
-      console.log("Monogdb error", error);
+      console.log("Mongo Db error", error);
     }
   }
 };

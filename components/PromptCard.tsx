@@ -4,6 +4,7 @@ import { useSession } from "next-auth/react";
 import Image from "next/image";
 import React, { useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
+import {maskEmail} from "@utils";
 
 interface Props {
   prompt: Prompt;
@@ -21,11 +22,11 @@ const PromptCard: React.FC<Props> = ({
   const { data: session } = useSession();
   const [copied, setCopied] = useState("");
   const pathName = usePathname();
-  const router = useRouter();
 
-  const handleCopy = (text: string) => {
+
+  const handleCopy = async (text: string) => {
     setCopied(text);
-    navigator.clipboard.writeText(text);
+    await navigator.clipboard.writeText(text);
     setTimeout(() => setCopied(""), 3000);
   };
 
@@ -35,7 +36,7 @@ const PromptCard: React.FC<Props> = ({
         <div className="flex-1 flex justify-start items-center gap-3 cursor-pointer">
           <Image
             alt="User Profile"
-            src={prompt?.creator?.image}
+            src={prompt?.creator?.image ?? ''}
             width={37}
             height={37}
             className="rounded-full object-contain"
@@ -45,7 +46,7 @@ const PromptCard: React.FC<Props> = ({
               {prompt.creator.username}
             </h3>
             <p className="font-inter text-sm text-gray-500">
-              {prompt.creator.email}
+              {maskEmail(prompt.creator.email)}
             </p>
           </div>
         </div>

@@ -10,18 +10,16 @@ import {
 } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const Navbar = () => {
   const [provider, setProvider] = useState<Record<
-    LiteralUnion<BuiltInProviderType, string>,
+    LiteralUnion<BuiltInProviderType>,
     ClientSafeProvider
   > | null>(null);
 
   const [isDropdownVisible, setDropdownVisibility] = useState(false);
   const { data: session } = useSession();
-  const router = useRouter();
 
   useEffect(() => {
     const updateProvider = async () => {
@@ -50,7 +48,7 @@ const Navbar = () => {
         {session?.user ? (
           <div className="flex gap-3 md:gap-5">
             <Link href={"/create-prompt"} className="black_btn">
-              Create Propmt
+              Create Prompt
             </Link>
             <button onClick={() => signOut()} className="outline_btn">
               Sign Out
@@ -116,9 +114,9 @@ const Navbar = () => {
                 </Link>
                 <button
                   type="button"
-                  onClick={() => {
+                  onClick={async () => {
                     setDropdownVisibility(false);
-                    signOut();
+                    await signOut();
                   }}
                   className="mt-5 w-full black_btn"
                 >

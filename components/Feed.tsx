@@ -23,7 +23,7 @@ const PromptCardList = ({ data = [], handleTagClick }: PromptCardListProps) => {
 };
 
 const Feed = () => {
-  const [serachText, setSearchText] = useState("");
+  const [searchText, setSearchText] = useState("");
   const [promptList, setPromptList] = useState<Prompt[]>([]);
   const [searchResult, setSearchResult] = useState<Prompt[]>([]);
 
@@ -32,15 +32,17 @@ const Feed = () => {
       const res = await fetch("/api/prompt", { cache: "no-store" });
       const data: Prompt[] = await res.json();
       setPromptList(data);
-    } catch (error) {}
+    } catch (error) {
+      console.log(error)
+    }
   };
 
   useEffect(() => {
     fetchPosts();
   }, []);
 
-  const filterPrompts = (searchtext: string) => {
-    const regex = new RegExp(searchtext, "i");
+  const filterPrompts = (searchText: string) => {
+    const regex = new RegExp(searchText, "i");
     return promptList.filter(
       (item) => regex.test(item.tag) || regex.test(item.prompt)
     );
@@ -67,13 +69,13 @@ const Feed = () => {
           type="text"
           placeholder="Search for Prompts/User"
           className="search_input peer"
-          value={serachText}
+          value={searchText}
           onChange={(e) => handleInputChange(e.currentTarget.value)}
           required
         />
       </form>
       <PromptCardList
-        data={serachText.length > 1 ? searchResult : promptList}
+        data={searchText.length > 1 ? searchResult : promptList}
         handleTagClick={handleTagClick}
       />
     </section>

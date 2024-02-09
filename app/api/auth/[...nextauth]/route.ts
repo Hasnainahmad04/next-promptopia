@@ -2,6 +2,7 @@ import User from "@models/user";
 import { ConnectToDatabase } from "@utils/database";
 import Google from "next-auth/providers/google";
 import NextAuth from "next-auth/next";
+import {Creator} from "@types";
 
 const handler = NextAuth({
   providers: [
@@ -40,12 +41,14 @@ const handler = NextAuth({
     },
     //@ts-ignore
     async session({ session }) {
-      if (!session) return;
+      if (!session) return session;
       const dbUser = await User.findOne({
         email: session?.user?.email,
       });
 
       const userId = dbUser?._id?.toString();
+
+      if (!userId) return session
 
       return {
         ...session,
