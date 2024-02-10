@@ -11,13 +11,14 @@ interface PromptCardListProps {
 const PromptCardList = ({ data = [], handleTagClick }: PromptCardListProps) => {
   return (
     <div className="mt-16 prompt_layout">
-      {!!data && data?.map((prompt) => (
-        <PromptCard
-          key={prompt._id}
-          prompt={prompt}
-          onTagClick={() => handleTagClick(prompt.tag)}
-        />
-      ))}
+      {!!data &&
+        data?.map((prompt) => (
+          <PromptCard
+            key={prompt._id}
+            prompt={prompt}
+            onTagClick={() => handleTagClick(prompt.tag)}
+          />
+        ))}
     </div>
   );
 };
@@ -30,10 +31,12 @@ const Feed = () => {
   const fetchPosts = async () => {
     try {
       const res = await fetch("/api/prompt", { cache: "no-store" });
-      const data: Prompt[] = await res.json();
-      setPromptList(data);
+      if (res.ok) {
+        const data: Prompt[] = await res.json();
+        setPromptList(data);
+      }
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   };
 
